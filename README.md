@@ -148,7 +148,7 @@ We rely on users submitting tokens from [https://mcleaks.net/](https://mcleaks.n
 
 Returns your quota, requests and plan status
 
-**Request Plan Details:** `/client/plan/
+**Request Plan Details:** `/client/plan/`
 
 **Note:** Requests/Quota array represents:
 ```json
