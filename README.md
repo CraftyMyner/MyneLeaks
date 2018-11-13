@@ -11,7 +11,7 @@ MCLeaks and VPN detection service API reference
 
 [`/check/name/<name>`](#check-for-leaked-account)\
 [`/check/uuid/<uuid>`](#check-for-leaked-account)\
-[`/check/ip/<ip>`](#check-for-vpn-ip-address)
+[`/check/ip/<ip>`](#check-for-vpn-address)
 
 **Resolve:**
 
@@ -68,13 +68,13 @@ Returns whether the supplied account is in the leaked database
 ```json
 {
 	"result": {
-		"leaked": <true|false>
+		"leaked": true
 	},
 	"success": true
 }
 ```
 
-## Check For VPN IP/Address
+## Check For VPN Address
 
 Returns whether the supplied account is in the VPN database
 
@@ -85,7 +85,7 @@ Returns whether the supplied account is in the VPN database
 ```json
 {
 	"result": {
-		"vpn": <true|false>
+		"vpn": true
 	},
 	"success": true
 }
@@ -148,11 +148,11 @@ We rely on users submitting tokens from [https://mcleaks.net/](https://mcleaks.n
 
 Returns your quota, requests and plan status
 
-**Submit Token:** `/client/plan/
+**Request Plan Details:** `/client/plan/
 
 **Note:** Requests/Quota array represents:
 ```json
-[minute,hour,day,month]
+["minute","hour","day","month"]
 ```
 
 **Response (Free Plan):**
