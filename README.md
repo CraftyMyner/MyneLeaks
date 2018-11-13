@@ -16,7 +16,8 @@ MCLeaks and VPN detection service API reference
 **Resolve:**
 
 [`/resolve/name/<name>`](#get-uuid-for-name)\
-[`/resolve/uuid/<uuid>`](#get-name-for-uuid)
+[`/resolve/uuid/<uuid>`](#get-name-for-uuid)\
+[`/resolve/case/<name>`](#get-correct-case)
 
 **Submit:**
 
@@ -125,6 +126,23 @@ Returns the UUID for the Minecraft Name
 }
 ```
 
+
+## Get Correct Case
+
+Returns the correct case for a Minecraft Name
+
+**Resolve Name:** `/resolve/case/<name>`
+
+**Response:**
+
+```json
+{
+	"result": {
+		"name": "CraftyMyner"
+	},
+	"success": true
+}
+```
 
 ## Submit MCLeaks Token
 
