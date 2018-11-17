@@ -163,7 +163,7 @@ We rely on users submitting tokens from [https://mcleaks.net/](https://mcleaks.n
 
 ## Get Plan Details
 
-Returns your quota, requests and plan status
+Returns your quota, requests and plan expiry
 
 **Path:** `/client/plan/`
 
@@ -177,7 +177,6 @@ Returns your quota, requests and plan status
 ```json
 }
 	"result": {
-		"expiry": 0.0,
 		"plan": "Free",
 		"quota": [10, 100, 1000, 10000],
 		"requests": [7, 34, 145, 983]
@@ -191,7 +190,7 @@ Returns your quota, requests and plan status
 ```json
 }
 	"result": {
-		"expiry": 0.0,
+		"expiry": 15062.54212,
 		"plan": "Standard",
 		"quota": [50, 500, 5000, 50000],
 		"requests": [49, 456, 789, 8932]
