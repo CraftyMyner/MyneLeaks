@@ -61,8 +61,7 @@ MCLeaks and VPN detection service API reference
 
 Returns whether the supplied account is in the leaked database
 
-**Check Name:** `/check/name/<name>`\
-**Check UUID:** `/check/uuid/<uuid>`
+**Path:** `/check/name/<name>` or `/check/uuid/<uuid>`
 
 **Response:**
 
@@ -79,7 +78,7 @@ Returns whether the supplied account is in the leaked database
 
 Returns whether the supplied account is in the VPN database
 
-**Check IP:** `/check/ip/<ip>`
+**Path:** `/check/ip/<ip>`
 
 **Response:**
 
@@ -96,7 +95,7 @@ Returns whether the supplied account is in the VPN database
 
 Returns the UUID for the Minecraft Name
 
-**Resolve Name:** `/resolve/name/<name>`
+**Path:** `/resolve/name/<name>`
 
 **Response:**
 
@@ -113,7 +112,7 @@ Returns the UUID for the Minecraft Name
 
 Returns the UUID for the Minecraft Name
 
-**Resolve Name:** `/resolve/uuid/<uuid>`
+**Path:** `/resolve/uuid/<uuid>`
 
 **Response:**
 
@@ -131,7 +130,7 @@ Returns the UUID for the Minecraft Name
 
 Returns the correct case for a Minecraft Name
 
-**Resolve Name:** `/resolve/case/<name>`
+**Path:** `/resolve/case/<name>`
 
 **Response:**
 
@@ -148,7 +147,7 @@ Returns the correct case for a Minecraft Name
 
 We rely on users submitting tokens from [https://mcleaks.net/](https://mcleaks.net/) to build our database of leaked accounts. By solving the captcha and submitting tokens to the service, you will be rewarded by having your rate limit cleared.
 
-**Submit Token:** `/submit/token/<token>`
+**Path:** `/submit/token/<token>`
 
 **Response:**
 
@@ -166,7 +165,7 @@ We rely on users submitting tokens from [https://mcleaks.net/](https://mcleaks.n
 
 Returns your quota, requests and plan status
 
-**Request Plan Details:** `/client/plan/`
+**Path:** `/client/plan/`
 
 **Note:** Requests/Quota array represents:
 ```json
