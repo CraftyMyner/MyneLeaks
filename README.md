@@ -163,7 +163,7 @@ We rely on users submitting tokens from [https://mcleaks.net/](https://mcleaks.n
 
 ## Get Plan Details
 
-Returns your quota, requests and plan expiry
+Returns your quota, requests and plan expiry in seconds
 
 **Path:** `/client/plan/`
 
