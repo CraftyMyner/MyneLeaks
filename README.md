@@ -167,19 +167,14 @@ Returns your quota, requests and plan expiry in seconds
 
 **Path:** `/client/plan/`
 
-**Note:** Requests/Quota array represents:
-```json
-["minute","hour","day","month"]
-```
-
 **Response (Free Plan):**
 
 ```json
 }
 	"result": {
 		"plan": "Free",
-		"quota": [10, 100, 1000, 10000],
-		"requests": [7, 34, 145, 983]
+		"quota": {"daily": 1000, "yearly": 10000},
+		"requests": {"daily": 145, "yearly": 983}
 	},
 	"success": true
 }
@@ -192,7 +187,7 @@ Returns your quota, requests and plan expiry in seconds
 	"result": {
 		"expiry": 15062.54212,
 		"plan": "Standard",
-		"quota": [50, 500, 5000, 50000],
+		"quota": [5000, 5000, 5000, 50000],
 		"requests": [49, 456, 789, 8932]
 	},
 	"success": true
