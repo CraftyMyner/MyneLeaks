@@ -201,6 +201,6 @@ Returns your quota, requests and plan expiry in seconds
 
 ## API rate limits and aquiring an API Key:
 
-The rate limits set for free users is 10k requests per month (10 per minute, 100 per hour, 1000 per day). If you need to make more requests, you can aquire an API key from me at [owner@craftymynes.com](owner@craftymynes.com)
+The rate limits set for free users is 10k requests per month (100 per hour, 1000 per day). If you need to make more requests, you can aquire an API key from me at [owner@craftymynes.com](owner@craftymynes.com)
 
 ##
