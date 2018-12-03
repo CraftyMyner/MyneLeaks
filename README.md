@@ -187,8 +187,8 @@ Returns your quota, requests and plan expiry in seconds
 	"result": {
 		"expiry": 15062.54212,
 		"plan": "Standard",
-		"quota": [5000, 5000, 5000, 50000],
-		"requests": [49, 456, 789, 8932]
+		"quota": {"daily": 1000, "monthly": 10000},
+		"requests": {"daily": 145, "monthy": 983}
 	},
 	"success": true
 }
@@ -196,6 +196,6 @@ Returns your quota, requests and plan expiry in seconds
 
 ## API rate limits and aquiring an API Key:
 
-The rate limits set for free users is 10k requests per month (100 per hour, 1000 per day). If you need to make more requests, you can aquire an API key from me at [owner@craftymynes.com](owner@craftymynes.com)
+The rate limits set for free users is 1k requests per day (10k per month). If you need to make more requests, you can aquire an API key from me at [owner@craftymynes.com](owner@craftymynes.com)
 
 ##
