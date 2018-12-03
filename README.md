@@ -13,11 +13,12 @@ MCLeaks and VPN detection service API reference
 [`/check/uuid/<uuid>`](#check-for-leaked-account)\
 [`/check/ip/<ip>`](#check-for-vpn-address)
 
-**Resolve:**
+**Lookup:**
 
-[`/resolve/name/<name>`](#get-uuid-for-name)\
-[`/resolve/uuid/<uuid>`](#get-name-for-uuid)\
-[`/resolve/case/<name>`](#get-correct-case)
+[`/lookup/name/<name>`](#get-uuid-for-name)\
+[`/lookup/uuid/<uuid>`](#get-name-for-uuid)\
+[`/lookup/case/<name>`](#get-correct-case)\
+[`/lookup/alts/<value>`](#lookup-alts)
 
 **Submit:**
 
@@ -49,7 +50,7 @@ MCLeaks and VPN detection service API reference
 ```json
 {
 	"result": {
-		"message": "",
+		"message": "The API method supplied is invalid!",
 		"reason": "InvalidAPIVersion"
 	},
 	"success": false
@@ -63,7 +64,7 @@ Returns whether the supplied account is in the leaked database
 
 **Path:** `/check/name/<name>` or `/check/uuid/<uuid>`
 
-**Response:**
+**Example:** `/check/name/JohnDoe` or `/check/uuid/c4c28f77-f21f-430c-a4e5-2271ad93e69e`
 
 ```json
 {
@@ -80,7 +81,7 @@ Returns whether the supplied account is in the VPN database
 
 **Path:** `/check/ip/<ip>`
 
-**Response:**
+**Example:** `/check/ip/193.251.76.9`
 
 ```json
 {
@@ -95,9 +96,9 @@ Returns whether the supplied account is in the VPN database
 
 Returns the UUID for the Minecraft Name
 
-**Path:** `/resolve/name/<name>`
+**Path:** `/lookup/name/<name>`
 
-**Response:**
+**Example:** `/lookup/name/CraftyMyner`
 
 ```json
 {
@@ -112,9 +113,9 @@ Returns the UUID for the Minecraft Name
 
 Returns the UUID for the Minecraft Name
 
-**Path:** `/resolve/uuid/<uuid>`
+**Path:** `/lookup/uuid/<uuid>`
 
-**Response:**
+**Example:** `/lookup/uuid/81c99f50-ff1a-480b-ae85-2792af98edae`
 
 ```json
 {
@@ -130,14 +131,51 @@ Returns the UUID for the Minecraft Name
 
 Returns the correct case for a Minecraft Name
 
-**Path:** `/resolve/case/<name>`
+**Path:** `/lookup/case/<name>`
 
-**Response:**
+**Example:** `/lookup/case/cRaFtYmYnEr`
 
 ```json
 {
 	"result": {
 		"name": "CraftyMyner"
+	},
+	"success": true
+}
+```
+
+
+## Lookup Alts
+
+Returns the alts for the supplied Name, UUID or IP Address along with Leaked and VPN results.
+
+NOTE: You must have alt lookup enabled on your plan to have access to this feature.
+
+**Path:** `/lookup/alts/<value>`
+
+**Example:** `/lookup/alts/JonDoe`
+
+```json
+{
+	"result": {
+		"uuids": {
+			"c4c28f77-f21f-430c-a4e5-2271ad93e69e": 1,
+			"54f28671-e51e-430d-a4e5-7871af13e62f": 2
+		},
+		"ips": {
+			"166.13.48.168": 1,
+			"54.241.129.53": 2
+		},
+		"names": {
+			"c4c28f77-f21f-430c-a4e5-2271ad93e69e": "JonDoe",
+			"54f28671-e51e-430d-a4e5-7871af13e62f": "Jane"
+		},
+		"leaked": {
+			"54f28671-e51e-430d-a4e5-7871af13e62f": true
+		},
+		"vpns": {
+			"54.241.129.53": true
+		}
 	},
 	"success": true
 }
