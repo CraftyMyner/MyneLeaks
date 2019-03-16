@@ -22,7 +22,7 @@ MCLeaks and VPN detection service API reference
 
 **Submit:**
 
-[`/submit/login/<uuid>/<address>`](#submit-player-login)
+[`/submit/login/<uuid>/<address>`](#submit-player-login)\
 [`/submit/token/<token>`](#submit-mcleaks-token)
 
 **Client:**
