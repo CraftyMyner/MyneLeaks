@@ -181,6 +181,24 @@ NOTE: You must have alt lookup enabled on your plan to have access to this featu
 }
 ```
 
+## Submit Player Login
+
+To resolve players alt's, you must submit players UUID's and IP's. These will be used to correlate players accounts to IP addresses.
+
+**Path:** `/submit/login/<UUID>/<Address>`
+
+**Example:** `/submit/login/c4c28f77-f21f-430c-a4e5-2271ad93e69e/166.13.48.168`
+
+**Response:**
+
+```json
+{
+	"result": {	
+	},
+	"success": true
+}
+```
+
 ## Submit MCLeaks Token
 
 We rely on users submitting tokens from [https://mcleaks.net/](https://mcleaks.net/) to build our database of leaked accounts. By solving the captcha and submitting tokens to the service, you will be rewarded by having your rate limit cleared.
